@@ -4,7 +4,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto+Slab:wght@300&family=Sacramento&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="icons8-alpha-96.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +12,9 @@
     <title>Plaksha University</title>
 </head>
 <body>
+    <div class="container">
+        <p class="moving-text"> <span class="red1">Notification:</span> Applications open for 2023 Batch. Round 1 Decisions released.</p>
+      </div>
     <nav> 
         <ul class="nav1">
           <li><a href="#">Home</a></li>
@@ -25,16 +28,48 @@
           <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>
-
+    
       
     <div class="bodycolour">
     <img id="cloud1" src="images/cloud.png" alt=""> 
+    <img class="cloud2" src="images/cloud.png" alt="">
+
     <h1 >Welcome to Plaksha University</h1>
-    <h2></h2>
+    <br>
+    <br>
+    
 
+    <div id="slideshow-container">
+		<img class="slideshow-image" src="Picture 1.png">
+		<img class="slideshow-image" src="Plaksha1.png">
+		<img class="slideshow-image" src="Plaksha2.png">
+	</div>
+<script>
+const slideshowImages = document.querySelectorAll('.slideshow-image');
+console.log(slideshowImages)
+let currentImageIndex = 0;
 
-<img class="tree" src="Picture 1.png" alt="">
-<img class="cloud2" src="images/cloud.png" alt="">
+function showNextImage() {
+  console.log('Entered showNExtImage function')
+  const previousImageIndex = currentImageIndex;
+  currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+//   console.log(slideshowImages[previousImageIndex])
+
+  slideshowImages[previousImageIndex].classList.remove('active');
+  slideshowImages[currentImageIndex].classList.add('active');
+
+  setTimeout(showNextImage, 5000);
+}
+
+slideshowImages[currentImageIndex].classList.add('active');
+setTimeout(showNextImage, 5000);
+
+</script>
+
+<h1>Our Founders</h1>
+       <p class="prog3">The founders are business leaders and technology entrepreneurs based in Hong Kong, India, London, New York, Silicon Valley, Singapore and Tokyo . They play an active role not only by investing philanthropically but also by mentoring students and building a community of change-makers and impact creators</p>
+<!-- <img class="tree" src="Picture 1.png" alt=""> -->
+<!-- <img class="cloud2" src="images/cloud.png" alt=""> -->
 </div>
 
 <div class="top_container">
@@ -43,7 +78,7 @@
     <img src="images/computer.png" alt=""> -->
 <div class="middlecontainer">
     <div class="profile">
-        <br>
+        <br><br><br>
         <h1>The Beginning</h1>
         <p class="prog1" >   Plaksha's journey started in 2015, as a conversation among a few friends about how and why technology education needs to change. This group of people, most of them entrepreneurs and business leaders, were keen to change the landscape of engineering and technology education in India and the world. Reimagining Higher Education Foundation, a Section 8 not-for-profit company, was set up in 2017 with a mission of converting the idea into a plan. In Feb 2019, the groundbreaking of Plaksha University's campus in Mohali took place with the aim of opening the campus in Aug 2021.
         </p>
@@ -94,4 +129,40 @@
      
       
 </div>
+<script>
+    const movingText = document.querySelector('.moving-text');
 
+function moveText() {
+  const containerWidth = document.querySelector('.container').offsetWidth;
+  const textWidth = movingText.offsetWidth;
+  let currentPosition = -textWidth;
+
+  function updatePosition() {
+    currentPosition += 1;
+    if (currentPosition > containerWidth) {
+      currentPosition = -textWidth;
+    }
+    movingText.style.left = currentPosition + 'px';
+    requestAnimationFrame(updatePosition);
+  }
+
+  updatePosition();
+}
+
+moveText();
+		// let slideshowImages = document.querySelectorAll('.slideshow-image');
+		// let currentImageIndex = 0;
+		
+		// function showNextImage() {
+		// 	slideshowImages[currentImageIndex].classList.remove('active');
+		// 	currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+		// 	slideshowImages[currentImageIndex].classList.add('active');
+		// }
+		
+		// slideshowImages[currentImageIndex].classList.add('active');
+		
+		// setInterval(showNextImage, 5000);
+     
+</script>
+</body>
+</html>
