@@ -12,9 +12,8 @@ body{
   list-style-type: none;
   background-color: lightcyan;
   margin: 0 0 0 0;
-  
   font-size: larger;
-  padding: 2rem 1rem 2rem 7rem;
+  padding: 4rem 1rem 2rem 7rem;
 }
 h1{
     margin-bottom: 34.08px;
@@ -54,9 +53,8 @@ a{
 }
 .cloud2{
     position:relative;
-    bottom:950px;
-
-   left:500px;
+    left:400px;
+    top: 200px;
 
 }
 
@@ -110,6 +108,16 @@ hr{
     font-weight: bold;
     text-align: left;
    line-height: 2;
+}
+.prog3{
+    font-weight: bold;
+    text-align: left;
+   line-height: 2;
+   padding-left: 2rem;
+   text-align: center;
+}
+.ab{
+    padding-left: 2rem;
 }
 .prog1{
     font-weight: bold;
@@ -194,3 +202,71 @@ a{
 a:hover{
     color: #fffafa;
 }
+.container {
+    position: relative;
+  }
+  
+  .moving-text {
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    white-space: nowrap;
+  }
+  .red1{
+    color: #a12618;
+  }
+
+/* #slideshow-container {
+    position: relative;
+    margin: auto;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+}
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;} */
+
+#re{
+   position: relative;
+   bottom: 13rem;
+   left: 20rem;
+   height: 7%;
+   width: 7%;
+    }
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+.slideshow-container {
+    max-width: 40%;
+    position: relative;
+    margin: auto;
+  }
+
+  .active {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }
